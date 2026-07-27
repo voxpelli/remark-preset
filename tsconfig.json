@@ -1,0 +1,9 @@
+{
+  "extends": "@voxpelli/tsconfig/node22.json",
+  "files": [
+    "index.js"
+  ],
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}

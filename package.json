@@ -1,0 +1,72 @@
+{
+  "name": "@voxpelli/remark-preset",
+  "version": "0.0.0",
+  "description": "Personal markdown style",
+  "homepage": "http://github.com/voxpelli/remark-preset",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voxpelli/remark-preset.git"
+  },
+  "keywords": [],
+  "author": "Pelle Wessman <pelle@kodfabrik.se> (http://kodfabrik.se/)",
+  "license": "MIT",
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0",
+    "typescript": ">=5.9"
+  },
+  "type": "module",
+  "exports": "./index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.d.ts.map"
+  ],
+  "scripts": {
+    "build": "run-s build:*",
+    "build:0": "run-s clean",
+    "build:1-declaration": "tsc -p declaration.tsconfig.json",
+    "check": "run-s clean && run-p check:* --continue-on-error",
+    "check:installed-check": "installed-check",
+    "check:knip": "knip",
+    "check:lint": "eslint",
+    "check:md": "remark .",
+    "check:tsc": "tsc",
+    "clean": "run-p clean:*",
+    "clean:declarations-top": "rm -f $(find . -maxdepth 1 -type f -name '*.d.ts*')",
+    "fix": "run-s fix:*",
+    "fix:lint": "eslint --fix",
+    "fix:md": "remark . -o",
+    "husky-disable": "git config --unset core.hooksPath",
+    "husky-enable": "husky",
+    "prepublishOnly": "run-s build",
+    "test": "run-s check"
+  },
+  "dependencies": {
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-lint-unordered-list-marker-style": "^4.0.1",
+    "remark-preset-lint-consistent": "^6.0.1",
+    "remark-preset-lint-recommended": "^7.0.1",
+    "remark-stringify": "^11.0.0",
+    "remark-validate-links": "^13.1.0",
+    "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "@voxpelli/eslint-config": "^25.1.0",
+    "@voxpelli/tsconfig": "^16.2.1",
+    "eslint": "^9.39.5",
+    "husky": "^9.1.7",
+    "installed-check": "^10.0.1",
+    "knip": "^6.29.0",
+    "npm-run-all2": "^9.0.2",
+    "remark-cli": "^12.0.1",
+    "typescript": "~6.0.3"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "./index.js"
+    ]
+  }
+}
