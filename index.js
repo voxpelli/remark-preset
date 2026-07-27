@@ -42,7 +42,7 @@ const voxpelliRemarkPreset = {
     remarkPresetLintConsistent,
     remarkPresetLintRecommended,
     remarkValidateLinks,
-    [remarkLintUnorderedListMarkerStyle, '-'],
+    [remarkLintUnorderedListMarkerStyle, '*'],
     // [
     //   remarkToc,
     //   {
