@@ -62,7 +62,7 @@ console.log(String(file));
 ## Checks
 
 * extends [`remark-preset-lint-recommended`](https://github.com/remarkjs/remark-lint/tree/main/packages/remark-preset-lint-recommended) and [`remark-preset-lint-consistent`](https://github.com/remarkjs/remark-lint/tree/main/packages/remark-preset-lint-consistent)
-* enforces `-` for unordered list item bullets
+* enforces `*` for unordered list item bullets
 * checks [broken local links](https://github.com/remarkjs/remark-validate-links)
 * supports [GFM](https://github.com/remarkjs/remark-gfm) (tables, strikethrough, task lists, etc.)
 * supports [YAML frontmatter](https://github.com/remarkjs/remark-frontmatter)
